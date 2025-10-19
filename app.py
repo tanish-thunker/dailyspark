@@ -330,7 +330,7 @@ def render_today(df: pd.DataFrame, prefs: dict):
                     # instantly hide this card
                     ph.empty()
                     st.toast("Marked as Done ✅")
-                    st.experimental_rerun()
+                    st.run()
                 if col3.button("Not relevant 🚫", key=f"skip_{item['id']}"):
                     item_id = str(item["id"])
                     if item_id not in prefs["history"]["skipped_ids"]:
@@ -339,7 +339,7 @@ def render_today(df: pd.DataFrame, prefs: dict):
                     append_event({"event":"skip","item_id":item_id})
                     ph.empty()
                     st.toast("Hidden for now")
-                    st.experimental_rerun()
+                    st.run()
                 if col4.button("Save 🔖", key=f"save_{item['id']}"):
                     item_id = str(item["id"])
                     if item_id not in prefs["history"]["saved_ids"]:
@@ -405,14 +405,14 @@ def render_saved(df: pd.DataFrame, prefs: dict):
                     update_streak_on_done(prefs)
                     save_prefs(prefs)
                     append_event({"event":"done","item_id":item_id})
-                    st.experimental_rerun()
+                    st.run()
                 if c3.button("Remove ❌", key=f"unsave_{item['id']}"):
                     item_id = str(item["id"])
                     if item_id in prefs["history"]["saved_ids"]:
                         prefs["history"]["saved_ids"].remove(item_id)
                         save_prefs(prefs)
                         append_event({"event":"unsave","item_id":item_id})
-                        st.experimental_rerun()
+                        st.run()
 
     st.divider()
     colA, colB = st.columns([1,1])
@@ -421,7 +421,7 @@ def render_saved(df: pd.DataFrame, prefs: dict):
             prefs["history"]["saved_ids"].clear()
             save_prefs(prefs)
             append_event({"event":"clear_saved"})
-            st.experimental_rerun()
+            st.run()
     with colB:
         st.caption("This only clears the Saved list (does not affect Done history).")
 
