@@ -1,0 +1,53 @@
+{
+  "interests": [
+    {
+      "name": "programming",
+      "weight": 1.0
+    },
+    {
+      "name": "ai",
+      "weight": 1.0
+    },
+    {
+      "name": "chess",
+      "weight": 1.0
+    },
+    {
+      "name": "badminton",
+      "weight": 1.0
+    },
+    {
+      "name": "german language",
+      "weight": 1.0
+    }
+  ],
+  "minutes": 25,
+  "language_pref": "en",
+  "difficulty_pref": null,
+  "history": {
+    "done_ids": [
+      "5",
+      "4",
+      "11",
+      "12",
+      "12",
+      "12",
+      "12",
+      "1",
+      "64"
+    ],
+    "skipped_ids": [
+      "8",
+      "2",
+      "1",
+      "11",
+      "12",
+      "7"
+    ],
+    "saved_ids": [
+      "11"
+    ]
+  },
+  "streak": 1,
+  "last_done_date": "2025-10-19"
+}
